@@ -1,9 +1,13 @@
 <?php
     require 'inc/database.php';
 
-    $id = 0;
+    $id = null;
     if (!empty($_GET['id'])) {
         $id = $_REQUEST['id'];
+    }
+
+    if (null === $id) {
+        header('Location: index.php');
     }
 
     if (!empty($_POST)) {
